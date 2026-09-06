@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orberg | Industrial Bolts, Nuts &amp; Fasteners Supplier in Nigeria</title>
+<meta name="description" content="Orberg supplies hex bolts, nuts, washers, threaded rods and industrial fasteners across Nigeria. Search by size or spec, request a price, and get a response on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal: #12161c;
+    --panel: #1b212a;
+    --panel-2: #212933;
+    --line: #313b47;
+    --steel: #97a1ad;
+    --steel-dim: #6c7784;
+    --off-white: #f3f4f2;
+    --brass: #b28b52;
+    --brass-bright: #c9a06a;
+    --font-display: 'Archivo', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--charcoal);
+    color:var(--off-white);
+    font-family:var(--font-body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--brass-bright); outline-offset:3px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(18,22,28,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    font-family:var(--font-display); font-weight:800;
+    font-size:1.4rem; letter-spacing:0.02em;
+  }
+  .logo span{color:var(--brass-bright);}
+  nav ul{list-style:none; display:flex; gap:32px;}
+  nav a{
+    font-size:0.95rem; color:var(--steel);
+    transition:color 0.15s ease;
+  }
+  nav a:hover{color:var(--off-white);}
+  .nav-cta{
+    display:flex; align-items:center; gap:10px;
+    background:var(--brass); color:var(--charcoal);
+    font-weight:600; font-size:0.9rem;
+    padding:10px 18px; border-radius:2px;
+    border:none;
+  }
+  .nav-cta:hover{background:var(--brass-bright);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--off-white);}
+  .menu-toggle svg{width:26px; height:26px;}
+
+  @media (max-width:900px){
+    nav ul{
+      position:fixed; top:76px; left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--panel);
+      border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden;
+      transition:max-height 0.25s ease;
+    }
+    nav ul.open{max-height:400px;}
+    nav ul li{border-top:1px solid var(--line);}
+    nav ul a{display:block; padding:16px 24px;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    border-bottom:1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(178,139,82,0.06), transparent 40%),
+      var(--charcoal);
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.05fr 0.95fr;
+    gap:48px; align-items:center;
+    padding-top:72px; padding-bottom:64px;
+  }
+  .hero-eyebrow{
+    font-family:var(--font-mono); font-size:0.78rem;
+    color:var(--brass-bright); letter-spacing:0.04em;
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .hero-eyebrow::before{
+    content:''; width:22px; height:1px; background:var(--brass-bright);
+  }
+  h1{
+    font-family:var(--font-display); font-weight:800;
+    font-size:clamp(2.1rem, 4.2vw, 3.4rem);
+    line-height:1.08; letter-spacing:-0.01em;
+    max-width:12ch;
+  }
+  .hero p.lead{
+    margin-top:22px; color:var(--steel); font-size:1.08rem;
+    max-width:46ch;
+  }
+  .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; font-size:0.95rem; font-weight:600;
+    border-radius:2px; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--brass); color:var(--charcoal);}
+  .btn-primary:hover{background:var(--brass-bright);}
+  .btn-outline{border-color:var(--line); color:var(--off-white);}
+  .btn-outline:hover{border-color:var(--steel);}
+  .btn-whatsapp{background:#25D366; color:#0c2b16;}
+  .btn-whatsapp:hover{background:#2fe377;}
+  .btn svg{width:18px; height:18px;}
+
+  /* Technical drawing */
+  .drawing-frame{
+    border:1px solid var(--line); background:var(--panel);
+    padding:26px; position:relative;
+  }
+  .drawing-frame::before{
+    content:'FIG. 01 — HEX BOLT, GRADE 8.8';
+    position:absolute; top:-11px; left:22px;
+    background:var(--charcoal); padding:0 8px;
+    font-family:var(--font-mono); font-size:0.68rem;
+    color:var(--steel-dim); letter-spacing:0.04em;
+  }
+  .drawing-frame svg{width:100%; height:auto;}
+  .draw-line{
+    stroke-dasharray:600; stroke-dashoffset:600;
+    animation:draw 1.6s ease forwards;
+  }
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion:reduce){
+    .draw-line{animation:none; stroke-dashoffset:0;}
+  }
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; padding-top:40px;}
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust{border-bottom:1px solid var(--line); background:var(--panel);}
+  .trust ul{
+    display:grid; grid-template-columns:repeat(5,1fr);
+    list-style:none;
+  }
+  .trust li{
+    padding:22px 18px; text-align:center;
+    border-left:1px solid var(--line);
+    font-size:0.88rem; font-weight:500; color:var(--steel);
+  }
+  .trust li:first-child{border-left:none;}
+  .trust li strong{display:block; color:var(--off-white); font-size:0.95rem; margin-bottom:2px;}
+  @media (max-width:900px){
+    .trust ul{grid-template-columns:repeat(2,1fr);}
+    .trust li{border-left:none; border-top:1px solid var(--line);}
+  }
+
+  /* ---------- Section shared ---------- */
+  section{padding:76px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:40px; flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-family:var(--font-display); font-weight:700;
+    font-size:clamp(1.5rem, 2.6vw, 2rem);
+  }
+  .section-head p{color:var(--steel); max-width:46ch;}
+  .tag{
+    font-family:var(--font-mono); font-size:0.72rem; color:var(--brass-bright);
+    letter-spacing:0.04em; margin-bottom:10px; display:block;
+  }
+
+  /* ---------- Search ---------- */
+  .search-section{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:56px 0;}
+  .search-box{
+    display:flex; align-items:center; gap:14px;
+    background:var(--charcoal); border:1px solid var(--line);
+    padding:6px 6px 6px 20px; max-width:720px;
+  }
+  .search-box svg{width:20px; height:20px; color:var(--steel); flex-shrink:0;}
+  .search-box input{
+    flex:1; background:none; border:none; color:var(--off-white);
+    font-family:var(--font-body); font-size:1rem; padding:14px 0;
+  }
+  .search-box input:focus{outline:none;}
+  .search-box button{
+    background:var(--brass); color:var(--charcoal); border:none;
+    padding:12px 22px; font-weight:600; font-size:0.9rem;
+  }
+  .search-examples{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;
+  }
+  .search-examples button{
+    background:none; border:1px solid var(--line); color:var(--steel);
+    font-family:var(--font-mono); font-size:0.78rem;
+    padding:7px 13px;
+  }
+  .search-examples button:hover{border-color:var(--brass-bright); color:var(--off-white);}
+
+  /* ---------- Categories ---------- */
+  .cat-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .cat-card{
+    background:var(--panel); padding:26px 22px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:background 0.15s ease;
+  }
+  .cat-card:hover{background:var(--panel-2);}
+  .cat-icon{width:34px; height:34px; color:var(--brass-bright);}
+  .cat-card h3{font-family:var(--font-display); font-size:1.02rem; font-weight:700;}
+  .cat-card p{font-size:0.85rem; color:var(--steel); flex:1;}
+  .cat-card .view{
+    font-size:0.82rem; font-weight:600; color:var(--brass-bright);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  @media (max-width:900px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.cat-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Products ---------- */
+  .prod-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  .prod-card{
+    border:1px solid var(--line); background:var(--panel);
+    display:flex; flex-direction:column;
+  }
+  .prod-visual{
+    height:140px; background:var(--panel-2);
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid var(--line);
+  }
+  .prod-visual svg{width:70px; height:70px; color:var(--steel-dim);}
+  .prod-body{padding:20px 20px 22px; display:flex; flex-direction:column; gap:14px; flex:1;}
+  .prod-body h3{font-family:var(--font-display); font-size:1.05rem; font-weight:700;}
+  .spec-table{width:100%; border-collapse:collapse; font-size:0.82rem;}
+  .spec-table td{padding:5px 0; border-top:1px solid var(--line); color:var(--steel);}
+  .spec-table td:last-child{
+    text-align:right; font-family:var(--font-mono); color:var(--off-white);
+  }
+  .prod-body .btn{margin-top:auto; justify-content:center; width:100%;}
+  @media (max-width:900px){.prod-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.prod-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Industries ---------- */
+  .industries{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .industry-row{
+    display:flex; flex-wrap:wrap; gap:0;
+    border:1px solid var(--line);
+  }
+  .industry-row span{
+    padding:16px 22px; font-size:0.9rem; color:var(--steel);
+    border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+    flex:1 1 auto; text-align:center; min-width:150px;
+  }
+
+  /* ---------- Why choose ---------- */
+  .why-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .why-card{background:var(--charcoal); padding:28px 24px;}
+  .why-card .num{font-family:var(--font-mono); font-size:0.75rem; color:var(--brass-bright);}
+  .why-card h3{font-family:var(--font-display); font-weight:700; font-size:1.05rem; margin:10px 0 8px;}
+  .why-card p{font-size:0.88rem; color:var(--steel);}
+  @media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CTA ---------- */
+  .cta-section{
+    background:linear-gradient(180deg, var(--panel), var(--charcoal));
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    text-align:left;
+  }
+  .cta-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:32px; flex-wrap:wrap;
+  }
+  .cta-inner h2{font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; max-width:16ch;}
+  .cta-inner p{color:var(--steel); margin-top:10px; max-width:42ch;}
+  .cta-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* ---------- Contact strip ---------- */
+  .contact-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); margin-top:44px;
+  }
+  .contact-item{background:var(--panel); padding:22px; font-size:0.88rem;}
+  .contact-item .tag{margin-bottom:8px;}
+  .contact-item div.val{color:var(--off-white); font-family:var(--font-mono); font-size:0.85rem;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- Footer ---------- */
+  footer{padding:56px 0 28px; border-top:1px solid var(--line);}
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;
+    padding-bottom:40px;
+  }
+  .footer-grid h4{font-size:0.85rem; color:var(--steel); margin-bottom:16px; font-weight:600;}
+  .footer-grid ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .footer-grid a, .footer-grid li{font-size:0.88rem; color:var(--steel-dim);}
+  .footer-grid a:hover{color:var(--off-white);}
+  .footer-desc{color:var(--steel); font-size:0.9rem; max-width:36ch; margin:14px 0 20px;}
+  .social-row{display:flex; gap:12px;}
+  .social-row a{
+    width:34px; height:34px; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .social-row svg{width:16px; height:16px; color:var(--steel);}
+  .footer-bottom{
+    border-top:1px solid var(--line); padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.8rem; color:var(--steel-dim);
+  }
+  @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Sticky mobile WhatsApp ---------- */
+  .sticky-wa{
+    position:fixed; bottom:18px; right:18px; z-index:60;
+    background:#25D366; color:#0c2b16;
+    width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.35);
+  }
+  .sticky-wa svg{width:26px; height:26px;}
+  @media (min-width:901px){.sticky-wa{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">ORBERG<span>.</span></a>
+    <nav>
+      <ul id="navList">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#quote">Request a Quote</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" id="navWa" href="#" target="_blank" rel="noopener">
+      Chat on WhatsApp
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-eyebrow">ORBERG INDUSTRIAL SUPPLY — NIGERIA</span>
+      <h1>Quality Bolts, Nuts &amp; Fasteners You Can Depend On</h1>
+      <p class="lead">Reliable industrial fasteners for construction, engineering, manufacturing, automotive, and general hardware applications — supplied wholesale and retail across Nigeria.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">Browse Products</a>
+        <a href="#quote" class="btn btn-outline">Request a Quote</a>
+        <a href="#" class="btn btn-whatsapp wa-link" data-msg="Hello Orberg, I'd like to speak with someone about your fasteners.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.4-1.36a9.9 9.9 0 0 0 4.64 1.16h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.9 14.02c-.25.7-1.4 1.34-1.93 1.42-.5.08-1.1.11-1.78-.11-.41-.13-.94-.3-1.6-.6-2.83-1.22-4.67-4.05-4.81-4.24-.14-.19-1.16-1.54-1.16-2.93 0-1.4.73-2.08.99-2.36.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.25.6.83 2.09.9 2.24.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.5-.15.15-.31.32-.13.62.17.3.77 1.28 1.66 2.08 1.14 1.03 2.1 1.35 2.4 1.5.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.72.82 2.02.97.3.15.5.22.57.34.08.13.08.72-.17 1.42Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="drawing-frame">
+      <svg viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- hex head -->
+        <polygon class="draw-line" points="100,40 140,20 180,40 180,80 140,100 100,80" stroke="#97a1ad" stroke-width="2"/>
+        <!-- shank -->
+        <rect class="draw-line" x="128" y="100" width="24" height="150" stroke="#97a1ad" stroke-width="2"/>
+        <!-- thread lines -->
+        <line class="draw-line" x1="128" y1="120" x2="152" y2="115" stroke="#6c7784" stroke-width="1.4"/>
+        <line class="draw-line" x1="128" y1="140" x2="152" y2="135" stroke="#6c7784" stroke-width="1.4"/>
+        <line class="draw-line" x1="128" y1="160" x2="152" y2="155" stroke="#6c7784" stroke-width="1.4"/>
+        <line class="draw-line" x1="128" y1="180" x2="152" y2="175" stroke="#6c7784" stroke-width="1.4"/>
+        <line class="draw-line" x1="128" y1="200" x2="152" y2="195" stroke="#6c7784" stroke-width="1.4"/>
+        <line class="draw-line" x1="128" y1="220" x2="152" y2="215" stroke="#6c7784" stroke-width="1.4"/>
+        <!-- tip -->
+        <polygon class="draw-line" points="128,250 152,250 140,270" stroke="#97a1ad" stroke-width="2"/>
+        <!-- dimension line for length -->
+        <line class="draw-line" x1="200" y1="100" x2="200" y2="270" stroke="#b28b52" stroke-width="1"/>
+        <line x1="195" y1="100" x2="205" y2="100" stroke="#b28b52" stroke-width="1"/>
+        <line x1="195" y1="270" x2="205" y2="270" stroke="#b28b52" stroke-width="1"/>
+        <text x="212" y="188" fill="#c9a06a" font-family="IBM Plex Mono, monospace" font-size="11">L 50mm</text>
+        <!-- dimension for head width -->
+        <line class="draw-line" x1="100" y1="16" x2="180" y2="16" stroke="#b28b52" stroke-width="1"/>
+        <text x="112" y="10" fill="#c9a06a" font-family="IBM Plex Mono, monospace" font-size="11">M12</text>
+        <text x="60" y="292" fill="#6c7784" font-family="IBM Plex Mono, monospace" font-size="10">GRADE 8.8 — ZINC PLATED</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <ul class="wrap" style="padding:0;">
+    <li><strong>Quality</strong>Products</li>
+    <li><strong>Competitive</strong>Pricing</li>
+    <li><strong>Reliable</strong>Supply</li>
+    <li><strong>Fast</strong>Response</li>
+    <li><strong>Wholesale</strong>&amp; Retail</li>
+  </ul>
+</div>
+
+<section class="search-section">
+  <div class="wrap">
+    <span class="tag">FIND A PART</span>
+    <h2 style="font-family:var(--font-display); font-weight:700; font-size:1.6rem; margin-bottom:18px;">Search by product, size, or specification</h2>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search by product, size, or specification...">
+      <button id="searchBtn">Search</button>
+    </div>
+    <div class="search-examples">
+      <button data-q="M12 bolt">M12 bolt</button>
+      <button data-q="M10 nut">M10 nut</button>
+      <button data-q="50mm bolt">50mm bolt</button>
+      <button data-q="stainless steel washer">stainless steel washer</button>
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="tag">PRODUCT RANGE</span>
+        <h2>Browse by category</h2>
+      </div>
+      <p>Twelve core categories covering construction, engineering, and general hardware fastening needs.</p>
+    </div>
+    <div class="cat-grid">
+      <!-- Category cards -->
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6v3l3 2v3l-3 2v8H9v-8l-3-2V8l3-2V3z"/></svg>
+        <h3>Hex Bolts</h3>
+        <p>Standard and high-tensile hex head bolts in a full range of sizes and grades.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Hex Nuts</h3>
+        <p>Matching hex nuts in carbon steel, stainless, and galvanized finishes.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.4"/></svg>
+        <h3>Washers</h3>
+        <p>Flat, spring, and structural washers for load distribution and locking.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="20" x2="20" y2="4"/><line x1="7" y1="8" x2="9" y2="6"/><line x1="11" y1="12" x2="13" y2="10"/><line x1="15" y1="16" x2="17" y2="14"/></svg>
+        <h3>Threaded Rods</h3>
+        <p>Fully threaded rods cut to length for anchoring and suspension work.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3v10a6 6 0 0012 0V3"/><line x1="4" y1="3" x2="8" y2="3"/><line x1="16" y1="3" x2="20" y2="3"/></svg>
+        <h3>U-Bolts</h3>
+        <p>Pipe and channel U-bolts for mounting and clamping applications.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="3" width="6" height="6"/><line x1="12" y1="9" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+        <h3>Anchor Bolts</h3>
+        <p>Foundation and expansion anchors for concrete and masonry fixing.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3l7 7-9 9-7-7z"/><line x1="8" y1="13" x2="4" y2="17"/></svg>
+        <h3>Screws</h3>
+        <p>Self-tapping, machine, and wood screws for general assembly work.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="12" y1="2" x2="12" y2="14"/><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="10" x2="17" y2="10"/><circle cx="12" cy="19" r="3"/></svg>
+        <h3>Stud Bolts</h3>
+        <p>Double-end studs with nuts, sized for flange and pipeline connections.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="6" r="4"/><line x1="12" y1="10" x2="12" y2="21"/></svg>
+        <h3>Eye Bolts</h3>
+        <p>Lifting and rigging eye bolts rated for load-bearing applications.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 4v16"/></svg>
+        <h3>Stainless Steel Fasteners</h3>
+        <p>Corrosion-resistant fasteners for outdoor, marine, and food-grade use.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0116 0"/><path d="M4 12a8 8 0 008 8"/></svg>
+        <h3>Galvanized Fasteners</h3>
+        <p>Hot-dip galvanized bolts and nuts built for weather exposure.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+      <div class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <h3>Industrial Fasteners</h3>
+        <p>Specialised fastening hardware for manufacturing and fabrication lines.</p>
+        <a href="#products" class="view">View Products →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="tag">FEATURED PRODUCTS</span>
+        <h2>Ready to quote, in stock</h2>
+      </div>
+      <p>Tap Request Price to open WhatsApp with the product and spec already filled in.</p>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<div class="industries">
+  <div class="wrap" style="padding-top:44px; padding-bottom:44px;">
+    <span class="tag">INDUSTRIES SERVED</span>
+    <h2 style="font-family:var(--font-display); font-weight:700; font-size:1.5rem; margin-bottom:22px;">Built for how Nigerian industry actually works</h2>
+    <div class="industry-row">
+      <span>Construction</span><span>Manufacturing</span><span>Engineering</span><span>Automotive</span>
+      <span>Fabrication</span><span>Oil &amp; Gas</span><span>Agriculture</span><span>Maintenance &amp; Repairs</span>
+    </div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="tag">WHY ORBERG</span>
+        <h2>Why customers choose us</h2>
+      </div>
+      <p>We supply fasteners the way engineers actually spec them — by size, grade, and finish, not guesswork.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><span class="num">01</span><h3>Quality Assured</h3><p>Every batch is checked against grade and dimensional tolerance before it leaves our store.</p></div>
+      <div class="why-card"><span class="num">02</span><h3>Wide Product Selection</h3><p>From M4 machine screws to M24 threaded rod, most standard sizes are on the shelf.</p></div>
+      <div class="why-card"><span class="num">03</span><h3>Competitive Prices</h3><p>Wholesale pricing tiers for contractors, fabricators, and repeat buyers.</p></div>
+      <div class="why-card"><span class="num">04</span><h3>Reliable Supply</h3><p>Stock levels are managed so your project isn't held up waiting on fasteners.</p></div>
+      <div class="why-card"><span class="num">05</span><h3>Expert Assistance</h3><p>Not sure which grade or thread pitch you need? Send us a photo and we'll match it.</p></div>
+      <div class="why-card"><span class="num">06</span><h3>Fast Customer Response</h3><p>Quotation requests are typically answered on WhatsApp within the same business day.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section" id="quote">
+  <div class="wrap" style="padding-top:64px; padding-bottom:64px;">
+    <div class="cta-inner">
+      <div>
+        <h2>Need the right fastener for your project?</h2>
+        <p>Tell us what you need and we'll help you find the right product, size, and grade — no minimum order for wholesale enquiries.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-whatsapp wa-link" data-msg="Hello Orberg, I'd like to request a quote. Product: | Size/Spec: | Quantity: | Delivery location:">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.4-1.36a9.9 9.9 0 0 0 4.64 1.16h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.9 14.02c-.25.7-1.4 1.34-1.93 1.42-.5.08-1.1.11-1.78-.11-.41-.13-.94-.3-1.6-.6-2.83-1.22-4.67-4.05-4.81-4.24-.14-.19-1.16-1.54-1.16-2.93 0-1.4.73-2.08.99-2.36.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.25.6.83 2.09.9 2.24.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.5-.15.15-.31.32-.13.62.17.3.77 1.28 1.66 2.08 1.14 1.03 2.1 1.35 2.4 1.5.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.72.82 2.02.97.3.15.5.22.57.34.08.13.08.72-.17 1.42Z"/></svg>
+          Request a Quote on WhatsApp
+        </a>
+        <a href="#contact" class="btn btn-outline">See Contact Details</a>
+      </div>
+    </div>
+
+    <div class="contact-grid" id="contact">
+      <div class="contact-item"><span class="tag">PHONE</span><div class="val">+234 801 234 5678</div></div>
+      <div class="contact-item"><span class="tag">EMAIL</span><div class="val">sales@orberg.ng</div></div>
+      <div class="contact-item"><span class="tag">ADDRESS</span><div class="val" style="font-family:var(--font-body); font-size:0.88rem;">14 Ladipo Industrial Road, Lagos, Nigeria</div></div>
+      <div class="contact-item"><span class="tag">HOURS</span><div class="val" style="font-family:var(--font-body); font-size:0.88rem;">Mon–Sat, 8am–6pm</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">ORBERG<span>.</span></div>
+        <p class="footer-desc">Industrial bolts, nuts, washers, and fastening hardware, supplied wholesale and retail across Nigeria.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3a4 4 0 00-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2a1 1 0 011-1z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10c0 3 2 5 5 5"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#categories">Hex Bolts</a></li>
+          <li><a href="#categories">Hex Nuts</a></li>
+          <li><a href="#categories">Washers</a></li>
+          <li><a href="#categories">Threaded Rods</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#quote">Request a Quote</a></li>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>+234 801 234 5678</li>
+          <li>sales@orberg.ng</li>
+          <li>Lagos, Nigeria</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Orberg Industrial Supply. All rights reserved.</span>
+      <span>Bolts &amp; Nuts Supplier — Lagos, Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="sticky-wa wa-link" id="stickyWa" data-msg="Hello Orberg, I'd like to make an enquiry.">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.4-1.36a9.9 9.9 0 0 0 4.64 1.16h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.9 14.02c-.25.7-1.4 1.34-1.93 1.42-.5.08-1.1.11-1.78-.11-.41-.13-.94-.3-1.6-.6-2.83-1.22-4.67-4.05-4.81-4.24-.14-.19-1.16-1.54-1.16-2.93 0-1.4.73-2.08.99-2.36.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.25.6.83 2.09.9 2.24.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.5-.15.15-.31.32-.13.62.17.3.77 1.28 1.66 2.08 1.14 1.03 2.1 1.35 2.4 1.5.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.72.82 2.02.97.3.15.5.22.57.34.08.13.08.72-.17 1.42Z"/></svg>
+</a>
+
+<script>
+  // ---- config ----
+  const WHATSAPP_NUMBER = "2348012345678"; // digits only, country code, no + or spaces
+
+  function waLink(msg){
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  }
+
+  // Wire up all static WhatsApp buttons
+  document.querySelectorAll('.wa-link, #navWa').forEach(el => {
+    const msg = el.dataset.msg || "Hello Orberg, I'd like to make an enquiry.";
+    el.href = waLink(msg);
+  });
+  document.getElementById('navWa').href = waLink("Hello Orberg, I'd like to speak with someone about your products.");
+
+  // Mobile menu toggle
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navList').classList.toggle('open');
+  });
+
+  // Search examples fill input
+  document.querySelectorAll('.search-examples button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('searchInput').value = btn.dataset.q;
+      document.getElementById('prodGrid').scrollIntoView({behavior:'smooth', block:'start'});
+      filterProducts(btn.dataset.q);
+    });
+  });
+  document.getElementById('searchBtn').addEventListener('click', () => {
+    filterProducts(document.getElementById('searchInput').value);
+    document.getElementById('prodGrid').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  document.getElementById('searchInput').addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){
+      filterProducts(e.target.value);
+      document.getElementById('prodGrid').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  // ---- Product data ----
+  const products = [
+    {name:"Hex Bolt", size:"M12", length:"50mm", material:"Carbon Steel", grade:"8.8", finish:"Zinc Plated"},
+    {name:"Hex Bolt", size:"M10", length:"40mm", material:"Carbon Steel", grade:"8.8", finish:"Zinc Plated"},
+    {name:"Hex Bolt", size:"M16", length:"60mm", material:"Carbon Steel", grade:"8.8", finish:"Zinc Plated"},
+    {name:"Hex Nut", size:"M12", length:"—", material:"Carbon Steel", grade:"8", finish:"Zinc Plated"},
+    {name:"Flat Washer", size:"M10", length:"—", material:"Carbon Steel", grade:"—", finish:"Zinc Plated"},
+    {name:"Threaded Rod", size:"M16", length:"1m", material:"Carbon Steel", grade:"4.8", finish:"Plain"},
+    {name:"U-Bolt", size:"M12", length:"—", material:"Carbon Steel", grade:"—", finish:"Galvanized"},
+    {name:"Stainless Steel Bolt", size:"M8", length:"30mm", material:"Stainless Steel A2", grade:"A2-70", finish:"Bright"},
+  ];
+
+  const boltIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><polygon points="7,3 11,1.5 15,3 15,7 11,8.5 7,7"/><rect x="9.5" y="8.5" width="3" height="11"/></svg>`;
+
+  const grid = document.getElementById('prodGrid');
+  function renderProducts(list){
+    grid.innerHTML = "";
+    list.forEach(p => {
+      const specLines = [
+        ["Size", p.size],
+        ["Length", p.length],
+        ["Material", p.material],
+        ["Grade", p.grade],
+        ["Finish", p.finish],
+      ].filter(([,v]) => v && v !== "—" || true);
+
+      const card = document.createElement('div');
+      card.className = "prod-card";
+      const rows = specLines.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+      const msg = `Hello Orberg, I'd like to request a price for:\n${p.name} — ${p.size}${p.length !== "—" ? " x " + p.length : ""}, ${p.material}${p.grade !== "—" ? ", Grade " + p.grade : ""}, ${p.finish} finish.`;
+      card.innerHTML = `
+        <div class="prod-visual">${boltIcon}</div>
+        <div class="prod-body">
+          <h3>${p.name} — ${p.size}</h3>
+          <table class="spec-table">${rows}</table>
+          <a class="btn btn-primary wa-link" href="${waLink(msg)}" target="_blank" rel="noopener">Request Price</a>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  function filterProducts(query){
+    const q = (query || "").toLowerCase().trim();
+    if(!q){ renderProducts(products); return; }
+    const filtered = products.filter(p =>
+      `${p.name} ${p.size} ${p.length} ${p.material} ${p.grade} ${p.finish}`.toLowerCase().includes(q)
+    );
+    renderProducts(filtered.length ? filtered : products);
+  }
+
+  renderProducts(products);
+</script>
+
+</body>
+</html>
